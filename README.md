@@ -34,6 +34,9 @@ This project demonstrates a Continuous Integration pipeline for deploying infras
 ## Folder Structure
 Refer to the repo layout for file placements.
 AWS-DataPlatform-Assignment
+## Architecture Diagram:
+![AWS Architecture](architecture-directory-diagram.png)
+
 ├── docker
 │   ├── Dockerfile
 │   ├── python_script.py
