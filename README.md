@@ -3,7 +3,7 @@
 # AWS Data Platform Assignment
 ==============================
 
-## 🚀 Project Overview
+## Project Overview
 This project demonstrates a Continuous Integration pipeline for deploying infrastructure and uploading files to Amazon S3 using Terraform, Docker, Python (boto3), and GitHub Actions.
 
 ---
@@ -54,7 +54,7 @@ AWS-DataPlatform-Assignment
 
 
 
-Python S3 Upload Script
+### Python S3 Upload Script
 =============================
     File: docker/python_script.py
 
@@ -65,7 +65,7 @@ Python S3 Upload Script
         Logs success/failure messages.
 
 
- Dockerfile
+### Dockerfile
 ===============
     Location: docker/Dockerfile
 
@@ -79,7 +79,7 @@ Python S3 Upload Script
 
         Executes upload on container run.
 
- CI/CD Pipeline (GitHub Actions)
+ ### CI/CD Pipeline (GitHub Actions)
 ==================================
     Workflow File: .github/workflows/ci.yml
 
@@ -100,7 +100,7 @@ Execution Steps
 git clone https://github.com/ChallaDevOps/AWS-DataPlatform-Assignment.git
 cd AWS-DataPlatform-Assignment
 
-Terraform Deployment:
+## Terraform Deployment:
 
 ```
 cd terraform
@@ -110,32 +110,42 @@ terraform plan
 terraform apply -auto-approve / terraform apply
 ```
 
-Secrets Setup:
+# Secrets Setup:
 
     Add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in GitHub Secrets.
 
-Push Code to Trigger CI/CD Pipeline:
-
+# Push Code to Trigger CI/CD Pipeline:
     ```
     git add .
     git commit -m "Final Submission"
     git push origin main
      ```
-    Monitor GitHub Actions → Check Successful Deployment.
+  Monitor GitHub Actions → Check Successful Deployment.
 
-Sample Output Logs
-
+### Sample Output Logs
+```
 [INFO] Building Docker Image...
 [INFO] Running S3 Upload Container...
 INFO:root:File uploaded successfully to S3.
-
-Improvements
+```
+## Improvements
 
     Use Terraform remote backend (S3 & DynamoDB) for state management.
     Add unit tests for Python scripts.
     Integrate Terraform deployment in CI/CD pipeline.
 
 
+## SQL 
+=====
 
+```
+The query first calculates the total sales per product for the previous calendar month.
+
+It filters data using sale_date to match previous month dates.
+
+It aggregates sales using SUM(amount_sold) and groups by product_id.
+
+Finally, it ranks products using the RANK() window function in descending order of total_sales.
+```
 
 ---
